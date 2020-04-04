@@ -182,8 +182,12 @@ async def leaderboard(ctx):
             for i in range(n):
                 for j in range(n-i-1):
                     if leaderboard_data[j]["points"] < leaderboard_data[j + 1]["points"]:
-                        leaderboard_data[j]["points"], leaderboard_data[j + 1]["points"] = \
-                            leaderboard_data[j + 1]["points"], leaderboard_data[j]["points"]
+                        # swap the places of the duo name and points values
+                        leaderboard_data[j]["points"] = leaderboard_data[j + 1]["points"]
+                        leaderboard_data[j]["duo"] = leaderboard_data[j+1]["duo"]
+                        # swap the places of the duo name and points values
+                        leaderboard_data[j + 1]["points"] = leaderboard_data[j]["points"]
+                        leaderboard_data[j+1]["duo"] = leaderboard_data[j]["duo"]
             for i in range(10):
                 await ctx.send(f'{i+1}. {leaderboard_data[i]["duo"]}: {leaderboard_data[i]["points"]}')
     except LookupError():
