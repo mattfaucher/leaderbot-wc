@@ -6,7 +6,7 @@ from operator import itemgetter
 
 from discord.ext.commands import has_permissions
 
-TOKEN = 'Njk0MjQ4NjE3NzI4Mjc4NTM4.XoI4dQ.I_JZvxoSnLnQ_E_TXd0_3X9uClw'
+TOKEN = # Your Token
 client = commands.Bot(command_prefix = '!')
 
 
@@ -64,19 +64,19 @@ async def clear(ctx, amount=5):
 # outputs link to rules channel
 @client.command()
 async def rules(ctx):
-    await ctx.send(f'{ctx.author.mention} -> Check out the {"<#694925915515256872>"} channel')
+    await ctx.send(f'{ctx.author.mention} -> Check out the {"CHANNEL NAME HERE"} channel')
 
 
 # outputs link to new channel
 @client.command()
 async def games(ctx):
-    await ctx.send(f'{ctx.author.mention} -> Check out the {"<#693665620407091251>"} channel to see when'
-                   f' the next games are starting. Also check out https://twitch.tv/wc_lavish/')
+    await ctx.send(f'{ctx.author.mention} -> Check out the {"<CHANNEL NAME HERE"} channel to see when'
+                   f' the next games are starting. Also check out TWITCH LINK')
 
 
 @client.command()
 async def twitch(ctx):
-    await ctx.send(f'{ctx.author.mention} -> Check out https://twitch.tv/wc_lavish/')
+    await ctx.send(f'{ctx.author.mention} -> Check out TWITCH LINK')
 
 
 # display current stats for the duo
@@ -94,7 +94,7 @@ async def stats(ctx, id):
             else:
                 count = count + 1
         if (count > 0):
-            await ctx.send(f'ID not found. Try again or contact <@{491600210816925706}>')
+            await ctx.send(f'ID not found. Try again or contact YOUR DISCORD ID #')
 
 
 # find your duo id number
@@ -111,7 +111,7 @@ async def duo_id(ctx, yourDuosName):
             else:
                 count = count + 1
             if (count > 0):
-                await ctx.send(f'id not found. Try again or contact <@{491600210816925706}>')
+                await ctx.send(f'id not found. Try again or contact YOUR DISCORD ID #')
 
 
 # add points for a win
@@ -129,8 +129,8 @@ async def win(ctx, id):
         await ctx.send(f'{ctx.author.mention} -> Nice win! +7 Points')
     except PermissionError():
         await ctx.send(f"You don't have permission to use that command\n"
-                       f"contact <@{433423373201178646}>, <@{491600210816925706}>,"
-                       f" or <@{603799184138567681}> to update your score")
+                       f"contact DISCORD ID, DISCORD ID,"
+                       f" or DISCORD ID to update your score")
 
 
 # add points for a top three finish
@@ -148,8 +148,8 @@ async def top3(ctx, id):
             await ctx.send(f'{ctx.author.mention} -> Top Three! +3 points')
     except PermissionError():
         await ctx.send(f"You don't have permission to use that command\n"
-                       f"contact <@{433423373201178646}>, <@{491600210816925706}>,"
-                       f" or <@{603799184138567681}> to update your score")
+                       f"contact DISCORD ID, DISCORD ID,"
+                       f" or DISCORD ID to update your score")
         
 
 # add points for a top 5 finish
@@ -167,8 +167,8 @@ async def top5(ctx, id):
         await ctx.send(f'{ctx.author.mention} -> Top Five! +1 point')
     except PermissionError():
         await ctx.send(f"You don't have permission to use that command\n"
-                           f"contact <@{433423373201178646}>, <@{491600210816925706}>,"
-                           f" or <@{603799184138567681}> to update your score")
+                           f"contact DISCORD ID, DISCORD ID,"
+                           f" or DISCORD ID to update your score")
 
 
 # output the top 10 scores from the group
