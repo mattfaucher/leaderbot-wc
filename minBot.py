@@ -20,6 +20,29 @@ async def on_ready():
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send('Use !help <command> to see proper command usage.')
+        
+        
+# command for commands
+@client.command()
+async def bot_commands(ctx):
+    embed = discord.Embed(
+        title='LeaderBot Commands',
+        description='All the commands that the LeaderBot has to offer!',
+        color=discord.Color.blue()
+    )
+
+    embed.set_footer(text='LeaderBot Commands')
+    embed.set_image(url='https://st2.depositphotos.com/2964705/9030/i/950/depositphotos_90300058-stock-photo-young-little-boy-isolated-thumbs.jpg')
+
+    embed.add_field(name="***!ping***", value="displays your ping", inline=False)
+    embed.add_field(name="***!add_duo***", value="creates your duo for the leaderboard\nusage *!add_duo @name @name*", inline=False)
+    embed.add_field(name="***!points***", value="displays point rules for scrims", inline=False)
+    embed.add_field(name="***!rules***", value="links to scrims-rules channel", inline=False)
+    embed.add_field(name="***!games***", value="links to channel with info about games and twitch stream", inline=False)
+    embed.add_field(name="***!twitch***", value="links to twitch", inline=False)
+    embed.add_field(name="***!stats***", value="displays current stats\nusage *!stats 9999*", inline=False)
+    embed.add_field(name="***!duo_id***", value="retrieves duo ID number\nusage *!duo_id @partnerName*", inline=False)
+    await ctx.channel.send(content=None, embed=embed)
 
 
 # displays current ping
